@@ -14,13 +14,13 @@
   font-size: 60px;
 }
 
-.table__rows--head {
+.table-head__cell {
   border: 1px solid black;
   height: 40px;
   background-color: rgba(135, 87, 24, 0.662);
 }
 
-.table__rows--body {
+.table-body__cell {
   border: 1px solid black;
   height: 30px;
   background-color: beige;
