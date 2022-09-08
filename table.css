@@ -17,11 +17,13 @@
 .table-head__cell {
   border: 1px solid black;
   height: 40px;
+  min-width: 100px;
   background-color: rgba(135, 87, 24, 0.662);
 }
 
 .table-body__cell {
   border: 1px solid black;
   height: 30px;
+  min-width: 100px;
   background-color: beige;
 }
