@@ -1,0 +1,27 @@
+.table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.table__caption {
+  background-color: black;
+  color: aliceblue;
+  height: 70px;
+  text-align: center;
+  font-size: 60px;
+}
+
+.table__rows--head {
+  border: 1px solid black;
+  height: 40px;
+  background-color: rgba(135, 87, 24, 0.662);
+}
+
+.table__rows--body {
+  border: 1px solid black;
+  height: 30px;
+  background-color: beige;
+}
