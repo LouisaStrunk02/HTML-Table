@@ -68,17 +68,21 @@ function mouseDown(event, borderNumber) {
         var mouseEnd = event.clientX;
         var mouseDiff = mouseStart - mouseEnd;
 
-        if (leftColumnWidth < minWidth && event.clientX >= (previousColumnsWidth + minWidth)) {
+        var leftCellIsMin = leftColumnWidth < minWidth && event.clientX >= (previousColumnsWidth + minWidth);
+        var rightCellIsMin = rightColumnWidth < minWidth && event.clientX <= (previousColumnsWidth + leftColumnWidth + minWidth);
+        var mouseIsOutOfBorder = event.clientX < (previousColumnsWidth + minWidth) || event.clientX > (previousColumnsWidth + leftColumnWidth + (rightColumnWidth - minWidth));
+
+        if (leftCellIsMin) {
             border[borderNum].style.left = `${mouseEnd}px`;
             leftColumn.style.width = `${leftColumnWidth + mouseDiff}px`;
             rightColumn.style.width = `${rightColumnWidth - mouseDiff}px`;
         }
-        else if (rightColumnWidth < minWidth && event.clientX <= (previousColumnsWidth + leftColumnWidth + minWidth)) {
+        else if (rightCellIsMin) {
             border[borderNum].style.left = `${mouseEnd}px`;
             leftColumn.style.width = `${leftColumnWidth - mouseDiff}px`;
             rightColumn.style.width = `${rightColumnWidth + mouseDiff}px`;
         }
-        else if (event.clientX < (previousColumnsWidth + minWidth) || event.clientX > (previousColumnsWidth + leftColumnWidth + (rightColumnWidth - minWidth))) {
+        else if (mouseIsOutOfBorder) {
             console.log("hi");
             return false;
         }
